@@ -33,7 +33,9 @@ class Mobile:
         return str1
 
 
+"""
 mob1 = Mobile()
 print("Creating an object")
 mob1.name = input("Enter a mobile name: ")
 print("Object Details\n", mob1)
+"""
