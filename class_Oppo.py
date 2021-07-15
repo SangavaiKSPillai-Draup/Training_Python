@@ -1,13 +1,13 @@
 from class_Mobile import Mobile
 
 
-class Samsung(Mobile):
-    manufacturer = "Samsung Inc"
+class Oppo(Mobile):
+    manufacturer = "BBK Electronics"
 
     def __init__(self):
         super().__init__()
         self.name = " "
-        self.series1 = " "
+        self.series = " "
 
     @property
     def series(self):
@@ -32,7 +32,7 @@ class Samsung(Mobile):
         return str1
 
 
-sam1 = Samsung()
-sam1.name = input("Enter name of Samsung mobile")
-sam1.series = input("Enter series of Samsung mobile")
-print("Samsung Mobile Details:\n", sam1)
+ppo1 = Oppo()
+ppo1.name = input("Enter name of Oppo mobile")
+ppo1.series = input("Enter series of Oppo mobile")
+print("Oppo Mobile Details:\n", ppo1)

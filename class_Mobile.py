@@ -9,10 +9,17 @@ class Mobile:
     def __init__(self):
         self._id = random.randint(min_range, max_range)
         self.name1 = " "
+        self.battery_Ah_value = 0
+        self.camera_megapixel_value = 0
+        self.colour = " "
 
     @property
     def name(self):
         return self.name1
+
+    @property
+    def color(self):
+        return self.colour
 
     @name.setter
     def name(self, nam1):
