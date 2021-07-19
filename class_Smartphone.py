@@ -1,25 +1,19 @@
 import random
+from abc import abstractmethod
 
 min_range = 1
 max_range = 30
 
 
-class Mobile:
+class Smartphone:
 
     def __init__(self):
         self._id = random.randint(min_range, max_range)
         self.name1 = " "
-        self.battery_Ah_value = 0
-        self.camera_megapixel_value = 0
-        self.colour = " "
 
     @property
     def name(self):
         return self.name1
-
-    @property
-    def color(self):
-        return self.colour
 
     @name.setter
     def name(self, nam1):
@@ -35,14 +29,18 @@ class Mobile:
         return self.name1
 
     def __str__(self):
-        str1 = "Mobile ID: " + str(self._id)  # type: str
-        str1 += "\nMobile Name: " + self.name1
+        str1 = "Smartphone ID: " + str(self._id)  # type: str
+        str1 += "\nSmartphone Name: " + self.name1
         return str1
+
+    @abstractmethod
+    def determine_cost(self):
+        pass
 
 
 """
-mob1 = Mobile()
+sma1 = Smartphone()
 print("Creating an object")
-mob1.name = input("Enter a mobile name: ")
-print("Object Details\n", mob1)
+sma1.name = input("Enter a smartphone name: ")
+print("Smartphone Details\n", mob1)
 """
