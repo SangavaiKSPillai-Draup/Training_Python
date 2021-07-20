@@ -9,7 +9,7 @@ class Samsung(Smartphone):
         super().__init__()
         self.name = " "
         self.series1 = " "
-        self.camera_mp= 0
+        self.camera_mp = 0
 
     @property
     def series(self):
@@ -18,7 +18,7 @@ class Samsung(Smartphone):
     @series.setter
     def series(self, ser1):
         if ser1 not in Samsung.series_list:
-            raise ValueError("Series mentioned is incorrect")
+            raise ValueError("Series mentioned is incorrect. It should be one of", Samsung.series_list)
         self.series1 = ser1
 
     @series.deleter
@@ -52,6 +52,7 @@ class Samsung(Smartphone):
             return 70000.00
 
 
+"""
 sam1 = Samsung()
 sam1.name = input("Enter name of Samsung mobile")
 sam1.series = input("Enter series of Samsung mobile")
@@ -59,3 +60,4 @@ print("Samsung Mobile Details:\n", sam1)
 print("Determine the cost of your phone, by entering the following: ")
 cost = sam1.determine_cost()
 print("The cost of your mobile is: ", cost)
+"""
