@@ -10,6 +10,7 @@ class Oppo(Smartphone):
         self.name = " "
         self.series1 = " "
         self.battery_ah = 0
+        self.camera_mp= 0
 
     @property
     def series(self):
@@ -39,12 +40,19 @@ class Oppo(Smartphone):
         str1 += "\nMobile Series: " + self.series
         return str1
 
-    def determine_cost(self):
-        self.battery_ah = int(input("Enter the Mega Ampere-hours(MaH) value of battery: "))
-        val = self.battery_ah
-        if val < 100:
-            raise ValueError("Improper value for battery MAH")
-        if val <= 2000:
+    def determine_cost(self, *args):
+        # self.battery_ah = int(input("Enter the Mega Ampere-hours(MaH) value of battery: "))
+        val = args[0]
+        if val < 900:
+            if val < 0:
+                raise ValueError("Improper value for Camera MP")
+            if val <= 48:
+                return 10000.00
+            elif 48 <= val <= 64:
+                return 30000.00
+            else:
+                return 70000.00
+        elif val <= 2000:
             return 15000.00
         elif 2000 < val <= 4500:
             return 40000.00
@@ -52,12 +60,14 @@ class Oppo(Smartphone):
             return 70000.00
 
 
-'''
 ppo1 = Oppo()
 ppo1.name = input("Enter name of Oppo mobile")
 ppo1.series = input("Enter series of Oppo mobile")
 print("Oppo Mobile Details:\n", ppo1)
-print("Determine the cost of your phone, by entering the following: ")
-cost = ppo1.determine_cost()
-print("The cost of your phone: ",cost)
-'''
+battery_ah = int(input("Enter the Mega Ampere-hours(MaH) value of battery: "))
+camera_mp = int(input("Enter Megapixel value of camera: "))
+# print("Determine the cost of your phone, by entering the following: ")
+cost = ppo1.determine_cost(battery_ah)
+print("The cost of your phone (as per battery): ", cost)
+cost = ppo1.determine_cost(camera_mp)
+print("The cost of your phone (as per camera megapixel)", cost)
