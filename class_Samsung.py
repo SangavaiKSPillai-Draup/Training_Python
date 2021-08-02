@@ -27,7 +27,7 @@ class Samsung(Smartphone):
 
     @series.getter
     def series(self):
-        print("Getter is called")
+        # print("Getter is called")
         return self.series1
 
     @staticmethod
@@ -42,7 +42,7 @@ class Samsung(Smartphone):
     def determine_cost(self):
         self.camera_mp = int(input("Enter Megapixel value of camera: "))
         val = self.camera_mp
-        if val<0:
+        if val < 0:
             raise ValueError("Improper value for Camera MP")
         if val <= 48:
             return 10000.00
@@ -50,6 +50,10 @@ class Samsung(Smartphone):
             return 30000.00
         else:
             return 70000.00
+
+    @classmethod
+    def get_Series_List(cls):
+        return cls.series_list
 
 
 """

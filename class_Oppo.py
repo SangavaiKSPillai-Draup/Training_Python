@@ -10,7 +10,7 @@ class Oppo(Smartphone):
         self.name = " "
         self.series1 = " "
         self.battery_ah = 0
-        self.camera_mp= 0
+        self.camera_mp = 0
 
     @property
     def series(self):
@@ -28,7 +28,7 @@ class Oppo(Smartphone):
 
     @series.getter
     def series(self):
-        print("Getter is called")
+        # print("Getter is called")
         return self.series1
 
     @staticmethod
@@ -39,6 +39,10 @@ class Oppo(Smartphone):
         str1 = super().__str__()
         str1 += "\nMobile Series: " + self.series
         return str1
+
+    @classmethod
+    def get_Series_List(cls):
+        return cls.series_list
 
     def determine_cost(self, *args):
         # self.battery_ah = int(input("Enter the Mega Ampere-hours(MaH) value of battery: "))
@@ -60,10 +64,11 @@ class Oppo(Smartphone):
             return 70000.00
 
 
+"""
 ppo1 = Oppo()
 ppo1.name = input("Enter name of Oppo mobile")
 ppo1.series = input("Enter series of Oppo mobile")
-print("Oppo Mobile Details:\n", ppo1)
+print("Oppo Mobile Details:", ppo1)
 battery_ah = int(input("Enter the Mega Ampere-hours(MaH) value of battery: "))
 camera_mp = int(input("Enter Megapixel value of camera: "))
 # print("Determine the cost of your phone, by entering the following: ")
@@ -71,3 +76,4 @@ cost = ppo1.determine_cost(battery_ah)
 print("The cost of your phone (as per battery): ", cost)
 cost = ppo1.determine_cost(camera_mp)
 print("The cost of your phone (as per camera megapixel)", cost)
+"""
