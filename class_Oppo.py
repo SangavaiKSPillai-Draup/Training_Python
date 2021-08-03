@@ -63,6 +63,13 @@ class Oppo(Smartphone):
         else:
             return 70000.00
 
+    def findSeries(self):
+        mob_series = [elem for elem in self.series_list if elem in self.name]
+        if len(mob_series) == 0:
+            raise ValueError("Can't find series for mobile: ", self.name)
+        self.series = mob_series[0]
+        return self
+
 
 """
 ppo1 = Oppo()

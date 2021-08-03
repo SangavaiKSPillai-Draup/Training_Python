@@ -25,7 +25,7 @@ class Smartphone:
 
     @name.getter
     def name(self):
-        print("Getter is called")
+        # print("Getter is called")
         return self.name1
 
     def __str__(self):

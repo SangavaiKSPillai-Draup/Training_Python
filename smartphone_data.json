@@ -1,0 +1,82 @@
+[
+  {
+    "Name": "Galaxy F22",
+    "Manufacturer": "Samsung Inc",
+    "Camera_mp": 48,
+    "Battery_ah": 6000,
+    "Series": "",
+    "Cost": ""
+  },
+  {
+    "Name": "Galaxy M32",
+    "Manufacturer": "Samsung Inc",
+    "Camera_mp": 64,
+    "Battery_ah": 6000,
+    "Series": "",
+    "Cost": ""
+  },
+  {
+    "Name": "Galaxy S20 FE",
+    "Manufacturer": "Samsung Inc",
+    "Camera_mp": 12,
+    "Battery_ah": 4500,
+    "Series": "",
+    "Cost": ""
+  },
+  {
+    "Name": "Galaxy A72",
+    "Manufacturer": "Samsung Inc",
+    "Camera_mp": 64,
+    "Battery_ah": 5000,
+    "Series": "",
+    "Cost": ""
+  },
+  {
+    "Name": "Galaxy A32",
+    "Manufacturer": "Samsung Inc",
+    "Camera_mp": 64,
+    "Battery_ah": 5000,
+    "Series": "",
+    "Cost": ""
+  },
+  {
+    "Name": "Find X2",
+    "Manufacturer": "BBK Electronics",
+    "Camera_mp": 48,
+    "Battery_ah": 4200,
+    "Series": "",
+    "Cost": ""
+  },
+  {
+    "Name": "Reno 3 Pro",
+    "Manufacturer": "BBK Electronics",
+    "Camera_mp": 44,
+    "Battery_ah": 4025,
+    "Series": "",
+    "Cost": ""
+  },
+  {
+    "Name": "F17 Pro",
+    "Manufacturer": "BBK Electronics",
+    "Camera_mp": 16,
+    "Battery_ah": 4015,
+    "Series": "",
+    "Cost": ""
+  },
+  {
+    "Name": "A72 5G",
+    "Manufacturer": "BBK Electronics",
+    "Camera_mp": 48,
+    "Battery_ah": 5000,
+    "Series": "",
+    "Cost": ""
+  },
+  {
+    "Name": "F11 Pro",
+    "Manufacturer": "BBK Electronics",
+    "Camera_mp": 48,
+    "Battery_ah": 4000,
+    "Series": "",
+    "Cost": ""
+  }
+]

@@ -1,11 +1,11 @@
-Name,Manufacturer,Battery_mAH,Camera_mp
-Galaxy F22,Samsung Inc,6000,48
-Galaxy M32,Samsung Inc,6000,64
-Galaxy S20 FE,Samsung Inc,4500,12
-Galaxy A72,Samsung Inc,5000,64
-Galaxy A32,Samsung Inc,5000,64
-Find X2,BBK Electronics,4200,48
-Reno 3 Pro,BBK Electronics,4025,44
-F17 Pro,BBK Electronics,4015,16
-A72 5G,BBK Electronics,5000,48
-F11 Pro,BBK Electronics,4000,48
+Name,Manufacturer,Camera_mp,Battery_ah,Series,Cost
+Galaxy F22,Samsung Inc,48,6000
+Galaxy M32,Samsung Inc,64,6000
+Galaxy S20 FE,Samsung Inc,12,4500
+Galaxy A72,Samsung Inc,64,5000
+Galaxy A32,Samsung Inc,64,5000
+Find X2,BBK Electronics,48,4200
+Reno 3 Pro,BBK Electronics,44,4025
+F17 Pro,BBK Electronics,16,4015
+A72 5G,BBK Electronics,48,5000
+F11 Pro,BBK Electronics,48,4000
