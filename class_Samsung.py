@@ -2,6 +2,9 @@ from class_Smartphone import Smartphone
 
 
 class Samsung(Smartphone):
+    """
+    A class for Samsung Mobiles. Subclass of Smartphone.
+    """
     manufacturer = "Samsung Inc"
     series_list = ["Galaxy Z", "Galaxy S", "Galaxy A", "Galaxy M", "Galaxy F"]
 
@@ -41,6 +44,10 @@ class Samsung(Smartphone):
         return str1
 
     def determine_cost(self):
+        """
+        Finds the cost of Samsung Mobiles
+        :return: COST
+        """
         self.camera_mp = int(input("Enter Megapixel value of camera: "))
         val = self.camera_mp
         if val < 0:

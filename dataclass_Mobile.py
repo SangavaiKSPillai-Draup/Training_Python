@@ -1,13 +1,17 @@
 """
 A dataclass is now created here to store information regarding mobiles
 """
-import csv
 import json
 from dataclasses import dataclass
 
 
 @dataclass
 class Mobile:
+    """
+    This is a dataclass that stores information regarding mobiles.
+    It also handles insertion, deletion, update and deletion in smartphone_data.json
+    file.
+    """
     name: str
     series: str
     camera_mp: int
@@ -111,12 +115,6 @@ class Mobile:
             jsonString = json.dumps(data, indent=2)
             file.write(jsonString)
             print("File updated")
-        '''
-        f1 = open("smartphone_data.csv", 'a', encoding='UTF-8')
-        w1 = csv.writer(f1)
-        w1.writerow([self.name, self.manufacturer, self.camera_mp, self.battery_ah, self.series, self.cost])
-        f1.close()
-        '''
 
     @classmethod
     def deleteRowInFile(cls):
@@ -127,33 +125,3 @@ class Mobile:
             raise ValueError("No such phone name can be found")
         del m1[index[0]]
         Mobile.writeFile(m1)
-
-
-# m1 = Mobile.readFile()
-# Mobile.writeFile(m1)
-'''
-nam, manf, camm, batt = Mobile.getUserInput()
-m_obj = Mobile()
-m_obj.writeData(nam, manf, camm, batt, '', '')
-m_obj.updateFile()
-'''
-Mobile.deleteRowInFile()
-"""
-m1 = []
-f1 = open("smartphone_data.csv", 'r', encoding='UTF-8')
-data = csv.reader(f1)
-i = next(data)
-data = list(data)
-# data[0][0] = 'Name'
-
-for row in data:
-    print(row)
-f1.close()
-"""
-
-'''
-f2 = open("smartphone_data.csv", 'w', newline='', encoding='UTF-8')
-writer = csv.writer(f2)
-writer.writerows(data)
-f2.close()
-'''

@@ -2,6 +2,9 @@ from class_Smartphone import Smartphone
 
 
 class Oppo(Smartphone):
+    """
+    A class for Oppo Mobiles. Subclass of Smartphone
+    """
     manufacturer = "BBK Electronics"
     series_list = ["Find X", "Reno", "F", "A"]
 

@@ -6,6 +6,9 @@ max_range = 30
 
 
 class Smartphone:
+    """
+    The base class of Smartphones
+    """
 
     def __init__(self):
         self._id = random.randint(min_range, max_range)
@@ -35,6 +38,10 @@ class Smartphone:
 
     @abstractmethod
     def determine_cost(self):
+        """
+        Abstract method that is used to calculate the cost of
+        smartphone
+        """
         pass
 
 
