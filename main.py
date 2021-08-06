@@ -1,11 +1,19 @@
 from dataclass_Mobile import Mobile
 from class_Samsung import Samsung
 from class_Oppo import Oppo
-import os
 
+success = False
 sam1 = Samsung()
 sam1.name = input("Enter name of Samsung mobile: ")
-sam1.series = input("Enter series of Samsung mobile: ")
+while not success:
+    try:
+        sam1.series = input("Enter series of Samsung mobile: ")
+        success = True
+    except ValueError:
+        print("Series should be one of: ", Samsung.get_Series_List())
+        var = input("Want to enter series again (y/n)?: ")
+        if var == 'n':
+            success = True
 print("Samsung Mobile Details:\n", sam1)
 print("Determine the cost of your phone, by entering the following: ")
 cost = sam1.determine_cost()
@@ -16,7 +24,16 @@ i = input("\n Press enter to continue ...")
 
 ppo1 = Oppo()
 ppo1.name = input("Enter name of Oppo mobile: ")
-ppo1.series = input("Enter series of Oppo mobile: ")
+success = False
+while not success:
+    try:
+        ppo1.series = input("Enter series of Oppo mobile: ")
+        success = True
+    except ValueError:
+        print("Series should be one of: ", Oppo.get_Series_List())
+        var = input("Want to enter series again (y/n)?: ")
+        if var == 'n':
+            success = True
 print("Oppo Mobile Details:\n", ppo1)
 battery_ah = int(input("Enter the Mega Ampere-hours(MaH) value of battery: "))
 camera_mp = int(input("Enter Megapixel value of camera: "))
@@ -54,14 +71,14 @@ def findSeries(mobile_list):
             oppo_mobile.append(op1)
 
     m_series = []
-    for item in samsung_mobile:
+    for it1 in samsung_mobile:
         m2 = Mobile()
-        m2.writeData(item.name, item.manufacturer, item.camera_mp, item.battery_ah, item.series, '')
+        m2.writeData(it1.name, it1.manufacturer, it1.camera_mp, it1.battery_ah, it1.series, '')
         m_series.append(m2)
 
-    for item in oppo_mobile:
+    for it1 in oppo_mobile:
         m2 = Mobile()
-        m2.writeData(item.name, item.manufacturer, item.camera_mp, item.battery_ah, item.series, '')
+        m2.writeData(it1.name, it1.manufacturer, it1.camera_mp, it1.battery_ah, it1.series, '')
         m_series.append(m2)
 
     return m_series
@@ -94,29 +111,39 @@ while True:
     print("\nMAIN MENU: ")
     print("1 - Read the contents of file: ")
     print("2 - Find the series of the mobile phone and write into the file: ")
-    print("3 - Update a new row in the file: ")
+    print("3 - Add a new row in the file: ")
     print("4 - Delete a row in the file: ")
-    print("5 - Exit")
+    print("5 - File Update")
+    print("6 - Advanced Search")
+    print("7 - Exit")
     ch = int(input("Enter your choice: "))
     if ch == 1:
         m1 = Mobile.readFile()
+        print("\n")
         for item in m1:
             print(item)
+            print("\n")
     elif ch == 2:
         m1 = Mobile.readFile()
-        m_series = findSeries(m1)
-        for item in m_series:
+        mob_series = findSeries(m1)
+        print("\n")
+        for item in mob_series:
             print(item)
-        Mobile.writeFile(m_series)
+            print("\n")
+        Mobile.writeFile(mob_series)
     elif ch == 3:
         nam, manf, camm, batt = Mobile.getUserInput()
         m_obj = Mobile()
         m_obj.writeData(nam, manf, camm, batt, '', '')
         # print(m_obj)
-        m_obj.updateFile()
+        m_obj.addRowInFile()
     elif ch == 4:
         Mobile.deleteRowInFile()
     elif ch == 5:
+        Mobile.updateFile()
+    elif ch == 6:
+        Mobile.searchFile()
+    elif ch == 7:
         break
     else:
-        raise ValueError("Invalid Option")
+        print("Invalid Option")

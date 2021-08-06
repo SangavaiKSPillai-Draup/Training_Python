@@ -45,6 +45,9 @@ class Oppo(Smartphone):
 
     @classmethod
     def get_Series_List(cls):
+        """
+        Returns the list of series a phone may belong to.
+        """
         return cls.series_list
 
     def determine_cost(self, *args):

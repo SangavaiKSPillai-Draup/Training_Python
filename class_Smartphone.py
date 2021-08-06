@@ -1,4 +1,4 @@
-import random
+import uuid
 from abc import abstractmethod
 
 min_range = 1
@@ -11,7 +11,7 @@ class Smartphone:
     """
 
     def __init__(self):
-        self._id = random.randint(min_range, max_range)
+        self._id = uuid.uuid4()
         self.name1 = " "
 
     @property
@@ -49,5 +49,5 @@ class Smartphone:
 sma1 = Smartphone()
 print("Creating an object")
 sma1.name = input("Enter a smartphone name: ")
-print("Smartphone Details\n", mob1)
+print("Smartphone Details\n", sma1)
 """

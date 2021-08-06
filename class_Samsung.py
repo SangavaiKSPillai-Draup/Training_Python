@@ -40,7 +40,8 @@ class Samsung(Smartphone):
 
     def __str__(self):
         str1 = super().__str__()
-        str1 += "\nSmartphone Series: " + self.series
+        if self.series != '':
+            str1 += "\nSmartphone Series: " + self.series
         return str1
 
     def determine_cost(self):
@@ -68,6 +69,9 @@ class Samsung(Smartphone):
 
     @classmethod
     def get_Series_List(cls):
+        """
+        Returns the list of series a phone may belong to.
+        """
         return cls.series_list
 
 

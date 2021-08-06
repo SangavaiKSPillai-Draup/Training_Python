@@ -19,7 +19,7 @@ def sop_deco(cls):
 @sop_deco
 class SOP(Samsung, Oppo):
     manufacturer = "ABC Mobiles"
-    series_list = ["Find S", "Find F", "Galaxy Reno"]
+    # series_list = ["Find S", "Find F", "Galaxy Reno"]
 
     def __init__(self):
         super().__init__()
@@ -27,8 +27,8 @@ class SOP(Samsung, Oppo):
 
 
 phone1 = SOP()
-'''
+
 phone1.series = input(
     "Enter series of your mobile: ")  # Output shows value error corresponding to Samsung class's @series.setter method.
-'''
+
 print("\nMethod Resolution Order: \n", SOP.__mro__)
